@@ -16,7 +16,7 @@ class Product extends Model
         'description',
         'amount',
         'confirm_amount',
-        'mininum_amount',
+        'minimum_amount',
     ];
 
     public function supplier()
