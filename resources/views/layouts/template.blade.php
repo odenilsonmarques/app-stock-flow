@@ -24,10 +24,10 @@
                             <a class="nav-link" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Fornecedor</a>
+                            <a class="nav-link" href="{{route('supplier.create')}}">Fornecedor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produto</a>
+                            <a class="nav-link" href="{{route('product.create')}}">Produto</a>
                         </li>
                     </ul>
                 </nav>
