@@ -25,7 +25,14 @@ class ControllerSupplier extends Controller
     public function store(StoreUpdateSupplier $request)
     {
         $Supplier = Supplier::create($request->all());
-        dd($Supplier);
+        // dd($Supplier);
+
+        //qd voltar verificar msg que é exibida quando não é uma imaem
+
+        if($request->invoice)
+         {
+             $Supplier['invoice'] = $request->invoice->store('/notas');
+         }
     }
 
     /**

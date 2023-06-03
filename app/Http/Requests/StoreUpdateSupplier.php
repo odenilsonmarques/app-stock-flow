@@ -23,11 +23,11 @@ class StoreUpdateSupplier extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required','string','min:3','max:255'],
-            'cnpj'=>['required','string'],
-            'phone'=>['required','string'],
+            'name'=>['required','string','min:3','max:255','unique:suppliers'],
+            'cnpj'=>['required','string','unique:suppliers'],
+            'phone'=>['required','string','unique:suppliers'],
             'date'=>['required'],
-            'invoice'=>['required']
+            'invoice'=>['required','image','max:1024'],
         ];
     }
 
@@ -35,12 +35,16 @@ class StoreUpdateSupplier extends FormRequest
     {
         return [
             'name.required'=>'O campo nome é obrigatório',
+            'name.unique'=>'O nome do fornecedor informado já está cadastrado',
             'name.min'=>'O campo nome deve ter no mínimo 3 caractres',
-            'name.max'=>'O campo nome deve ter no maximo 255 caractres',
+            'name.max'=>'O campo nome deve ter no maximo 400 caractres',
             'cnpj.required'=>'O campo cnpj é obrigatório',
+            'cnpj.unique'=>'O cnpj informado já está cadastrado',
             'phone.required'=>'O campo telefone é obrigatório',
-            'date.required'=>'O campo data é obrigatório',
-            'invoice.required'=>'O campo nota fiscal é obrigatório'
+            'phone.unique'=>'O telefone informado já está cadastrado',
+            'phone.required'=>'O campo data é obrigatório',
+            'invoice.required'=>'O campo nota fiscal é obrigatório',
+            'invoice.image'=>'O campo nota fiscal deve ser uma imagem',
         ];
     }
 }
