@@ -23,4 +23,9 @@ class Product extends Model
     {
         return $this->belongsTo(Supplier::class);
     }
+
+    public function productOutPuts()
+    {
+        return $this->hasMany(productOutPut::class);
+    }
 }
