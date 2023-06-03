@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('amount_outPut');
+            $table->string('typeOutPut');
             $table->date('date_outPut');
             $table->string('destiny');
             $table->string('responsible_for_leaving');
+            $table->string('responsible_for_receiving');
             $table->timestamps();
         });
     }

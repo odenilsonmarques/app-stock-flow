@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('product.create')}}">Produto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('productsoutputs.create')}}">Saida de produto</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
