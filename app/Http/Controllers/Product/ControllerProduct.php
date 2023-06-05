@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Supplier; 
+use App\Http\Requests\StoreUpdateProduct;
 
 class ControllerProduct extends Controller
 {
@@ -17,7 +18,7 @@ class ControllerProduct extends Controller
         //
     }
 
-    public function create(Request $request)
+    public function create()
     {
         
         $suppliers = Supplier::all();
@@ -28,10 +29,12 @@ class ControllerProduct extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProduct $request)
     {
         $request->merge(['supplier_id']); 
+        // dd($teste);
         Product::create($request->all());
+
     }
 
     /**

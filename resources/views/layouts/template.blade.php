@@ -57,6 +57,8 @@
     @yield('script')
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/script-mask-inputs.js')}}"></script>
+    <script src="{{asset('assets/js/compare-values-input.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 
