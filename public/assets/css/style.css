@@ -23,16 +23,26 @@ button a{
 }
 
 .card-header{
-    background-color: #DCDCDC;
+    background-color: #AEC2B6;
 }
 
 .suppliers{
-    margin-top:50px;
+    margin-top:80px;
 }
 .header-table{
-    background-color: #6c63ff;
+    background-color: #AEC2B6 ;
 }
 
 table th{
-    color:#FFF;
+    color:#fff;
+    
+}
+
+table td a{
+    color:#94AF9F;
+    padding-left: 8px;
+}
+
+table td a:hover{
+    color:#111;
 }

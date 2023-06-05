@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="mb">
-        <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#94AF9F">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     Fluxo de estoque
