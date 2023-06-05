@@ -12,6 +12,7 @@ Route::get('/suppliers/index',[ControllerSupplier::class,'index'])->name('suppli
 
 Route::get('/products',[ControllerProduct::class,'create'])->name('product.create');
 Route::post('/products',[ControllerProduct::class,'store'])->name('product.store');
+Route::get('/products/index',[ControllerProduct::class,'index'])->name('product.index');
 
 Route::get('/productsoutputs',[ControllerProductOutPut::class,'create'])->name('productsoutputs.create');
 Route::post('/productsoutputs',[ControllerProductOutPut::class,'store'])->name('productsoutputs.store');

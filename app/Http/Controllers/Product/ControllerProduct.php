@@ -15,15 +15,14 @@ class ControllerProduct extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 
     public function create()
     {
-        
         $suppliers = Supplier::all();
         return view('products.create', compact('suppliers'));
-
     }
 
     /**
