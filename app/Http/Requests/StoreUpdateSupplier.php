@@ -37,7 +37,7 @@ class StoreUpdateSupplier extends FormRequest
             'name.required'=>'O campo nome é obrigatório',
             'name.unique'=>'O nome do fornecedor informado já está cadastrado',
             'name.min'=>'O campo nome deve ter no mínimo 3 caractres',
-            'name.max'=>'O campo nome deve ter no maximo 400 caractres',
+            'name.max'=>'O campo nome deve ter no maximo 255 caractres',
             'cnpj.required'=>'O campo cnpj é obrigatório',
             'cnpj.unique'=>'O cnpj informado já está cadastrado',
             'phone.required'=>'O campo telefone é obrigatório',

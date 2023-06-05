@@ -43,3 +43,20 @@ document.addEventListener("DOMContentLoaded", function() {
         event.target.value = phone;
     });
 });
+
+
+//este trecho possibilita que no input nome produto seja digitado somente letra
+document.addEventListener("DOMContentLoaded", function() {
+    var nomeInput = document.getElementById("name-product");
+    
+    nomeInput.addEventListener("input", function(event) {
+        var name = event.target.value;
+        
+        name = name.replace(/[^a-zA-ZÀ-ÿ ]/g, '');
+        
+        event.target.value = name;
+    });
+});
+
+
+
