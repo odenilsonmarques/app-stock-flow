@@ -18,19 +18,15 @@ document.addEventListener("DOMContentLoaded", function() {
             swal({
                 title: "Ops...",
                 text: "Os campos Quantidade e Confirme a Quantidade precisam ter o mesmo valor !", 
-              });
+            });
         }
-
-        if (amountValue < minimumAmountValue) {
+        else if( minimumAmountValue > amountValue) {
             event.preventDefault(); 
-            // alert("Os valores devem ser iguais!");
+            // alert("A quantidade minima não pode ser maior do que a quantidade geral!");
             swal({
                 title: "Ops...",
                 text: "A quantidade minima não pode ser maior do que a qauntidade geral !", 
-              });
-
+            });
         }
-
-
     }
 });
