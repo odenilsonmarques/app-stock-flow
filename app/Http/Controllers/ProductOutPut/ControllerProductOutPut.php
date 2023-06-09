@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductOutPut;
+use App\Http\Requests\StoreUpdateProductOutPut;
 use Exception;
 
 class ControllerProductOutPut extends Controller
@@ -23,7 +24,7 @@ class ControllerProductOutPut extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreUpdateProductOutPut $request)
     {
         $product_id = $request->merge(['product_id']); 
         ProductOutPut::create($request->all());
