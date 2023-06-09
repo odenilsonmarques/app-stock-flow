@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-lg-3 mb-3">
                                     <label for="name" class="form-label">Produto</label>
-                                    <input type="name"  name="name" id="name-product" class="form-control" placeholder="Digite somente letras" value="{{old('name')}}" required>
+                                    <input type="name"  name="name" id="name" class="form-control only-letters" placeholder="Digite somente letras" value="{{old('name')}}" required>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
