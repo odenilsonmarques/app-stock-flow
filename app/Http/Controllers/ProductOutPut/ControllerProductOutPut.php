@@ -37,7 +37,7 @@ class ControllerProductOutPut extends Controller
         $availableQuantity = $product->confirm_amount;
 
         if ($request->amount_outPut > $product->confirm_amount) {
-            $mensagemErro = sprintf('Quantidade solicitada indisponível. Quantidade disponível: %d', $availableQuantity);
+            $mensagemErro = sprintf('Estoque indisponível. Quantidade disponível: %d', $availableQuantity);
             return redirect()->back()->withErrors($mensagemErro)->withInput();
             // return redirect()->back()->withErrors($validator)->withInput();
         }
