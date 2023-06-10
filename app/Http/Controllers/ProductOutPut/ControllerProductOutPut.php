@@ -33,7 +33,17 @@ class ControllerProductOutPut extends Controller
 
         //atualizando o valor da coluna comfirm_amount da tabela product, apos a subtração com acoluna amount_outPut
         $product = Product::find($product_id->product_id);
+
+        $availableQuantity = $product->confirm_amount;
+
+        if ($request->amount_outPut > $product->confirm_amount) {
+            $mensagemErro = sprintf('Estoque indisponível. Quantidade disponível: %d', $availableQuantity);
+            return redirect()->back()->withErrors($mensagemErro)->withInput();
+            // return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $product->confirm_amount -= $product_id->amount_outPut;
+
         $product->save();
     }
 
