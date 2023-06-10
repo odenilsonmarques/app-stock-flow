@@ -16,6 +16,7 @@ Route::get('/products/index',[ControllerProduct::class,'index'])->name('product.
 
 Route::get('/productsoutputs',[ControllerProductOutPut::class,'create'])->name('productsoutputs.create');
 Route::post('/productsoutputs',[ControllerProductOutPut::class,'store'])->name('productsoutputs.store');
+Route::get('/productsoutputs/index',[ControllerProductOutPut::class, 'index'])->name('productsoutputs.index');
 
 
 

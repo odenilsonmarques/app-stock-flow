@@ -14,6 +14,8 @@ class ControllerProductOutPut extends Controller
    
     public function index()
     {
+        $productOutPuts = ProductOutPut::all();
+        return view('productOutPuts.index', compact('productOutPuts'));
     }
 
     public function create()
