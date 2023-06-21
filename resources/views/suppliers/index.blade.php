@@ -4,7 +4,13 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 mt-5">
+                @if(session('messageCreate'))
+                    <div class="alert alert-success alert-dismissible msg fade show text-center" role="alert">
+                        <strong>{{session('messageCreate')}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <div class="table-responsive">
                     <table class="table table table-hover caption-top">
                         <caption class="suppliers">Fornecedores</caption>
@@ -15,6 +21,7 @@
                                 <th>Cnpj</th>
                                 <th>Telefone</th>
                                 <th>Lançado Em</th>
+                                <th>Notas</th>
                                 <th>
                                     Ações
                                 </th>
@@ -28,6 +35,13 @@
                                     <td>{{$supplier->cnpj}}</td>
                                     <td>{{$supplier->phone}}</td>
                                     <td>{{date('d/m/Y',strtotime($supplier->created_at))}}</td>
+                                    <td>
+                                        @if($supplier->invoice)
+                                            <img src="{{url("storage/{$supplier->invoice}") }}" alt="{{$supplier->name}}" width="50" height="50">
+                                        @else
+                                            <img src="{{url("assets/img/dollar.png") }}" alt="nota" width="50" height="50">
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="#" title="Editar">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

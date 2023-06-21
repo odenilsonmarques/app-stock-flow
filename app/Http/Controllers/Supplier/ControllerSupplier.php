@@ -25,15 +25,19 @@ class ControllerSupplier extends Controller
 
     public function store(StoreUpdateSupplier $request)
     {
-        $Supplier = Supplier::create($request->all());
-        // dd($Supplier);
 
-        //qd voltar verificar msg que é exibida quando não é uma imaem
+        $data = $request->except('invoice');
 
         if($request->invoice)
-         {
-             $Supplier['invoice'] = $request->invoice->store('/notas');
-         }
+        {
+            
+            $data['invoice'] = $request->invoice->store('notas');
+        }
+
+        Supplier::create($data);
+
+        return redirect()->route('supplier.index')
+        ->with('messageCreate', 'Fornecedor cadastrado com sucesso !');
     }
 
     /**
