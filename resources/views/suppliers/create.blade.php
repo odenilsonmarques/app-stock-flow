@@ -47,7 +47,7 @@
 
                                 <div class="col-lg-3 mb-3">
                                     <label for="invoice" class="form-label">Nota Fiscal</label>
-                                    <input type="file"  name="invoice"  id="invoice" class="form-control" required>
+                                    <input type="file"  name="invoice"  id="invoice" class="form-control">
                                 </div>
                             </div>
 

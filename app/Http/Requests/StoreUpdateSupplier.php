@@ -27,7 +27,7 @@ class StoreUpdateSupplier extends FormRequest
             'cnpj'=>['required','string','unique:suppliers'],
             'phone'=>['required','string','unique:suppliers'],
             'date'=>['required'],
-            'invoice'=>['required','image','max:1024'],
+            'invoice'=>['image','max:1024'],
         ];
     }
 
@@ -43,8 +43,7 @@ class StoreUpdateSupplier extends FormRequest
             'phone.required'=>'O campo telefone é obrigatório',
             'phone.unique'=>'O telefone informado já está cadastrado',
             'phone.required'=>'O campo data é obrigatório',
-            'invoice.required'=>'O campo nota fiscal é obrigatório',
-            'invoice.image'=>'O campo nota fiscal deve ser uma imagem',
+            'invoice.image'=>'O campo nota fiscal deve uma imagem e ter no máximo :1024 kb',
         ];
     }
 }
