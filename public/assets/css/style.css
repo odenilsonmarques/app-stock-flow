@@ -1,5 +1,5 @@
 body{
-    background-color: #FFFAF0;
+    background-color: #f8f6f6;
 }
 
 .navbar a.navbar-brand {
@@ -26,9 +26,7 @@ button a{
     background-color: #AEC2B6;
 }
 
-.suppliers{
-    margin-top:80px;
-}
+
 .header-table{
     background-color: #AEC2B6 ;
 }
@@ -45,4 +43,42 @@ table td a{
 
 table td a:hover{
     color:#111;
+}
+
+
+.red-row {
+    color: yellow;
+}
+
+.yellow-row {
+    color: red;
+}
+                        
+
+.qtdProduct{
+    margin-left: 5px;
+    border: 1px solid #fff;
+    padding: 1px 3px 1px 3px;
+    color: red;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.alert-custom{
+    margin-top: 70px;
+    margin-bottom: -80px;
+}
+
+.required::after {
+    content: "*";
+    color: red; /* Cor do asterisco */
+    margin-left: 3px;
+}
+
+a.new-supplier{
+    color:#fff;
+}
+
+a.new-supplier:hover{
+    color: #94AF9F;
 }

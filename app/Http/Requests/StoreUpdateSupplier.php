@@ -23,7 +23,7 @@ class StoreUpdateSupplier extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required','string','min:3','max:255','unique:suppliers'],
+            'name'=>['required','string','min:3','max:255'],
             'cnpj'=>['required','string','unique:suppliers'],
             'phone'=>['required','string','unique:suppliers'],
             'date'=>['required'],
@@ -35,7 +35,7 @@ class StoreUpdateSupplier extends FormRequest
     {
         return [
             'name.required'=>'O campo nome é obrigatório',
-            'name.unique'=>'O nome do fornecedor informado já está cadastrado',
+            // 'name.unique'=>'Já existe um fornecedor com essinformado já está cadastrado',
             'name.min'=>'O campo nome deve ter no mínimo 3 caractres',
             'name.max'=>'O campo nome deve ter no maximo 255 caractres',
             'cnpj.required'=>'O campo cnpj é obrigatório',

@@ -4,24 +4,29 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 mt-5">
+            <div class="col-sm-12">
                 @if(session('messageCreate'))
-                    <div class="alert alert-success alert-dismissible msg fade show text-center" role="alert">
+                    <div class="alert alert-success alert-dismissible msg fade show text-center alert-custom" role="alert">
                         <strong>{{session('messageCreate')}}</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <div class="table-responsive">
-                    <table class="table table table-hover caption-top">
-                        <caption class="suppliers">Fornecedores</caption>
+                <div class="table-responsive mt-5">
+                    <table class="table table table-hover caption-top mt-5">
+                        <caption>Fornecedores<br>
+                            <button type="button" class="btn btn-secondary btn-sm mt-2"><a href="{{route('supplier.create')}}" class="new-supplier">Novo
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                </svg></a>
+                            </button>
+                        </caption>
                         <thead class="table header-table">
                             <tr>
-                               
                                 <th>Fornecedor</th>
                                 <th>Cnpj</th>
                                 <th>Telefone</th>
-                                <th>Lançado Em</th>
-                                <th>Notas</th>
+                                <th>Data</th>
+                                <th>NFS-e</th>
                                 <th>
                                     Ações
                                 </th>
@@ -30,16 +35,15 @@
                         <tbody>
                             @foreach($suppliers as $supplier)
                                 <tr>
-                                   
                                     <td>{{$supplier->name}}</td>
                                     <td>{{$supplier->cnpj}}</td>
                                     <td>{{$supplier->phone}}</td>
                                     <td>{{date('d/m/Y',strtotime($supplier->created_at))}}</td>
                                     <td>
                                         @if($supplier->invoice)
-                                            <img src="{{url("storage/{$supplier->invoice}") }}" alt="{{$supplier->name}}" width="50" height="50">
+                                            <img src="{{url("storage/{$supplier->invoice}") }}" alt="{{$supplier->name}}" width="25" height="25" class="">
                                         @else
-                                            <img src="{{url("assets/img/dollar.png") }}" alt="nota" width="50" height="50">
+                                            <img src="{{url("assets/img/nota.jpg") }}" alt="nota" width="30" height="30">
                                         @endif
                                     </td>
                                     <td>
@@ -59,6 +63,13 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    <div class="justify-content-left pagination">
+                      
+                        {{-- {!! $suppliers->links('pagination::bootstrap-4') !!} --}}
+                        {{ $suppliers->links() }}
+                       
+                    </div>
                 </div>
             </div>
         </div>
