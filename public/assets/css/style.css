@@ -75,10 +75,41 @@ table td a:hover{
     margin-left: 3px;
 }
 
-a.new-supplier{
+/* a.new-supplier{
     color:#fff;
 }
 
 a.new-supplier:hover{
     color: #94AF9F;
+} */
+
+.button-new-supplier{
+    background-color:#94AF9F;
+    border: none;
+    height: 30px;
+    margin-top: 7px;
+}
+
+.button-new-supplier a{
+    color:#fff;
+}
+
+/* .inputSearch{
+    height:33px;
+} */
+
+
+button.inputSearch{
+    border:1px solid #fff;
+    background-color: #94AF9F;
+    color:#fff;
+}
+
+
+
+
+.search-and-button{
+    margin-top:110px;
+    /* border: 1px solid red; */
+    margin-bottom: 15px;
 }

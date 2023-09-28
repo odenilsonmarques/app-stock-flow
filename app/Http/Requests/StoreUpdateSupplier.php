@@ -28,6 +28,7 @@ class StoreUpdateSupplier extends FormRequest
             'phone'=>['required','string','unique:suppliers'],
             'date'=>['required'],
             'invoice'=>['image','max:1024'],
+
         ];
     }
 
@@ -44,6 +45,8 @@ class StoreUpdateSupplier extends FormRequest
             'phone.unique'=>'O telefone informado já está cadastrado',
             'phone.required'=>'O campo data é obrigatório',
             'invoice.image'=>'O campo nota fiscal deve uma imagem e ter no máximo :1024 kb',
+
+            
         ];
     }
 }
