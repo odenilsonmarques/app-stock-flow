@@ -29,9 +29,8 @@ class ControllerProductOutPut extends Controller
     public function store(StoreUpdateProductOutPut $request)
     {
         $product_id = $request->merge(['product_id']); 
-        ProductOutPut::create($request->all());
-
-        //atualizando o valor da coluna comfirm_amount da tabela product, apos a subtração com acoluna amount_outPut
+        
+        //updating comfirm_amount column value of tabela product, if the condition is satisfied
         $product = Product::find($product_id->product_id);
 
         $availableQuantity = $product->confirm_amount;
@@ -39,12 +38,14 @@ class ControllerProductOutPut extends Controller
         if ($request->amount_outPut > $product->confirm_amount) {
             $mensagemErro = sprintf('Estoque indisponível. Quantidade disponível: %d', $availableQuantity);
             return redirect()->back()->withErrors($mensagemErro)->withInput();
-            // return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $product->confirm_amount -= $product_id->amount_outPut;
-
         $product->save();
+
+        ProductOutPut::create($request->all());
+        return redirect()->route('productsoutputs.index')
+        ->with('messageCreate', 'Saida de produto registrada com sucesso !');
     }
 
 

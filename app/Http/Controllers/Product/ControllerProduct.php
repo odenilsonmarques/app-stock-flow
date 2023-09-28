@@ -33,6 +33,8 @@ class ControllerProduct extends Controller
         $request->merge(['supplier_id']); 
         // dd($teste);
         Product::create($request->all());
+        return redirect()->route('product.index')
+        ->with('messageCreate', 'Produto cadastrado com sucesso !');
 
     }
 

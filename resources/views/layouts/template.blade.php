@@ -24,13 +24,13 @@
                             <a class="nav-link" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('supplier.create')}}">Fornecedor</a>
+                            <a class="nav-link" href="{{route('supplier.index')}}">Fornecedor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('product.create')}}">Produto</a>
+                            <a class="nav-link" href="{{route('product.index')}}">Produto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('productsoutputs.create')}}">Saida de produto</a>
+                            <a class="nav-link" href="{{route('productsoutputs.index')}}">Saida de produto</a>
                         </li>
                     </ul>
                 </nav>
@@ -59,6 +59,7 @@
     <script src="{{asset('assets/js/script-mask-inputs.js')}}"></script>
     <script src="{{asset('assets/js/compare-values-input.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {{-- <script src="{{asset('assets/js/script-valida-cnpj.js')}}"></script> --}}
 
 
 

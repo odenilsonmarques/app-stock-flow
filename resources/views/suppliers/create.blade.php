@@ -24,24 +24,24 @@
                             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
                             <div class="row">
                                 <div class="col-lg-12 mb-3">
-                                    <label for="name" class="form-label">Nome do Fornecedor</label>
-                                    <input type="name" name="name" id="name" class="form-control" value="{{old('name')}}" required>
+                                    <label for="name" class="form-label required">Nome do Fornecedor</label>
+                                    <input type="name" name="name" id="name" class="form-control" value="{{old('name')}}" placeholder="Digite aqui" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-lg-3 mb-3">
-                                    <label for="cnpj" class="form-label">Cnpj</label>
-                                    <input type="cnpj"  name="cnpj" id="cnpj" class="form-control" value="{{old('cnpj')}}" required>
+                                    <label for="cnpj" class="form-label required">Cnpj</label>
+                                    <input type="cnpj"  name="cnpj" id="cnpj" class="form-control" value="{{old('cnpj')}}" placeholder="Digite aqui" title="Digite apenas números" required>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
-                                    <label for="phone" class="form-label">Telefone</label>
-                                    <input type="phone"  name="phone"  id="phone" class="form-control" value="{{old('phone')}}" required>
+                                    <label for="phone" class="form-label required">Telefone</label>
+                                    <input type="phone"  name="phone"  id="phone" class="form-control" value="{{old('phone')}}" placeholder="Digite aqui" title="Digite apenas números" required>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
-                                    <label for="date" class="form-label">Data</label>
+                                    <label for="date" class="form-label required">Data</label>
                                     <input type="date"  name="date"  id="date" class="form-control" value="{{old('date')}}" required>
                                 </div>
 
