@@ -9,12 +9,14 @@ use App\Http\Requests\StoreUpdateSupplier;
 
 class ControllerSupplier extends Controller
 {
+    private $totalPage = 3;
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $suppliers = Supplier::paginate(7);
+        $suppliers = Supplier::paginate($this->totalPage);
         return view('suppliers.index', compact('suppliers'));
     }
 
@@ -64,5 +66,15 @@ class ControllerSupplier extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    // Declando o objeto Supplier, pois vou precisar recuperar o metodo criado na model supplier
+    public function search(Request $request, Supplier $supplier)
+    {
+        $dataForm = $request->all();
+
+        $suppliers = $supplier->search($dataForm, $this->totalPage);
+
+        return view('suppliers.index', compact('suppliers'));
     }
 }

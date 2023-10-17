@@ -16,11 +16,11 @@
         <div class="row search-and-button">
             <div class="col-lg-6 col align-self-start">
                 <div class="input-group">
-                    <form action="#" method="POST" class="form-horizontal">
+                    <form action="{{route('supllier.search')}}" method="POST" class="form-horizontal">
                         @csrf
                         <div class="input-group">
-                            <input type="text" name="person" id="person" class="form-control inputSearch sm"
-                                placeholder="Buscar por pessoa">
+                            <input type="text" name="cnpj" id="cnpj" class="form-control inputSearch sm"
+                                placeholder="Digite o cnpj">
 
                             <div class="input-group-append ml-3">
                                 <button type="submit" class="btn btn-outline-secondary inputSearch">Buscar</button>

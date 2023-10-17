@@ -21,4 +21,17 @@ class Supplier extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    // Esse método vai centralizar as responsabilidades de filtrar os itens
+    public function search(Array $data, $totalPage)
+    {
+        return $this->where(function($query) use ($data){
+            if(isset($data['cnpj'])){
+                // $query->where('cnpj', $data['cnpj']);
+                $query->where('cnpj', 'LIKE', $data['cnpj'] . '%');
+            }
+        })
+
+        ->paginate($totalPage);
+    }
 }
