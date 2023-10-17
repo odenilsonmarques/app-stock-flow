@@ -26,6 +26,8 @@ class ControllerSupplier extends Controller
     public function store(StoreUpdateSupplier $request)
     {
 
+        // dd($request->file('invoice')->isValid());
+
         $data = $request->except('invoice');
 
         if($request->invoice)

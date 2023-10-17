@@ -65,11 +65,9 @@
                                 <td>{{ date('d/m/Y', strtotime($supplier->created_at)) }}</td>
                                 <td>
                                     @if ($supplier->invoice)
-                                        <img src="{{ url("storage/{$supplier->invoice}") }}" alt="{{ $supplier->name }}"
-                                            width="25" height="25" class="">
+                                        <img src="{{ url("storage/{$supplier->invoice}") }}" alt="{{ $supplier->name }}" width="25" height="25" class="">
                                     @else
-                                        <img src="{{ url('assets/img/nota.jpg') }}" alt="nota" width="30"
-                                            height="30">
+                                        <img src="{{ url('assets/img/nota.jpg') }}" alt="nota" width="30" height="30">
                                     @endif
                                 </td>
                                 <td>
