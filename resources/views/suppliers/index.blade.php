@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="button" class="button-new-supplier btn-sm">
+                <button type="button" class="button-new-register btn-sm">
                     <a href="{{ route('supplier.create') }}" class="new-supplier">Novo
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
