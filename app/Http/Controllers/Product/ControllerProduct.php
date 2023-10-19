@@ -10,12 +10,13 @@ use App\Http\Requests\StoreUpdateProduct;
 
 class ControllerProduct extends Controller
 {
+    private $totalPage = 3;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate($this->totalPage);
         return view('products.index', compact('products'));
     }
 
@@ -60,5 +61,16 @@ class ControllerProduct extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    // Declando o objeto Product, pois vou precisar recuperar o metodo(searchProduct) criado na model Product
+    public function search(Request $request, Product $product){
+
+        $dataForm = $request->all();
+
+        $products = $product->searchProduct($dataForm, $this->totalPage);
+
+        return view('products.index', compact('products'));
+
     }
 }

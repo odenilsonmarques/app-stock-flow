@@ -115,8 +115,8 @@ button.inputSearch{
 }
 
 .warning-product{
-    background-color: #ededed;
-    font-size: 12px;
+    background-color: #94AF9F;
+    font-size: 13px;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 5px;
@@ -128,4 +128,6 @@ button.inputSearch{
 .warning-product,a{
     padding-top: 5px;
     text-decoration: none;
+    color: #fff;
+   
 }
