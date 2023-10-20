@@ -21,6 +21,7 @@ Route::any('/products/search',[ControllerProduct::class,'search'])->name('produc
 Route::get('/productsoutputs',[ControllerProductOutPut::class,'create'])->name('productsoutputs.create');
 Route::post('/productsoutputs',[ControllerProductOutPut::class,'store'])->name('productsoutputs.store');
 Route::get('/productsoutputs/index',[ControllerProductOutPut::class, 'index'])->name('productsoutputs.index');
+Route::any('/productsoutputs/search',[ControllerProductOutPut::class,'search'])->name('productsoutputs.search');
 
 
 

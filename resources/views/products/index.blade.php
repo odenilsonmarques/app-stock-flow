@@ -33,10 +33,11 @@
 
             <div class="col-lg-6 d-grid gap-2 d-md-flex justify-content-md-end">
                 @php
-                    $countConfirmAmount = 0;
-                    $countConfirmAmounttAndMinimumAmount = 0;
+                    // $countConfirmAmount;
+                    // $countConfirmAmounttAndMinimumAmount = 0;
                 @endphp
-                @foreach ($products as $product)
+
+                {{-- @foreach ($products as $product)
                     @if ($product->confirm_amount == 0)
                         @php
                             $countConfirmAmount++;
@@ -48,15 +49,15 @@
                             $countConfirmAmounttAndMinimumAmount++;
                         @endphp
                     @endif
-                @endforeach
+                @endforeach --}}
 
                 <p class="warning-product mt-2">
                     <a href="#">Produtos esgotados {{ $countConfirmAmount }}</a>
                 </p>
 
-                <p class="warning-product mt-2">
+                {{-- <p class="warning-product mt-2">
                     <a href="#">Produtos com quantidade minima {{ $countConfirmAmounttAndMinimumAmount }}</a>
-                </p>
+                </p> --}}
 
                 <button type="button" class="button-new-register btn-sm"><a href="{{ route('product.create') }}">Novo
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -86,13 +87,17 @@
                     </thead>
                     <tbody>
                         @foreach ($products as $product)
-                            <tr
-                                @if ($product->confirm_amount == $product->minimum_amount) class="red-row" 
-                                    @elseif($product->confirm_amount < $product->minimum_amount) class="yellow-row" @endif>
+                            <tr @if ($product->confirm_amount == 0) class="red-row" @endif>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->supplier->name }}</td>
                                 <td>{{ $product->amount }}</td>
-                                <td>{{ $product->confirm_amount }}</td>
+                                <td>
+                                    @if ($product->confirm_amount == 0)
+                                        Esgotado
+                                    @else
+                                        {{ $product->confirm_amount }}
+                                    @endif
+                                </td>
                                 <td>{{ $product->minimum_amount }}</td>
                                 <td>{{ date('d/m/Y', strtotime($product->created_at)) }}</td>
                                 <td>
@@ -116,12 +121,12 @@
                             </tr>
                         @endforeach
                     </tbody>
+
                 </table>
                 <div class="flex justify-start space-x-4 mt-4">
                     {{ $products->links() }}
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

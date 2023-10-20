@@ -16,8 +16,10 @@ class ControllerProduct extends Controller
      */
     public function index()
     {
+        $countConfirmAmount = Product::where('confirm_amount', 0)->count(); //display products with quantity equal zero in collunm confirm_amount   
         $products = Product::paginate($this->totalPage);
-        return view('products.index', compact('products'));
+
+        return view('products.index', compact('products','countConfirmAmount'));
     }
 
     public function create()
@@ -66,11 +68,14 @@ class ControllerProduct extends Controller
     // Declando o objeto Product, pois vou precisar recuperar o metodo(searchProduct) criado na model Product
     public function search(Request $request, Product $product){
 
+        //display products with quantity equal zero in collunm confirm_amount. 
+        //passando essa variavel aqui também, pois quando é feito uma busca caso esa variável não seja declarada aqui é gerado um erro
+        $countConfirmAmount = Product::where('confirm_amount', 0)->count();
         $dataForm = $request->all();
 
         $products = $product->searchProduct($dataForm, $this->totalPage);
 
-        return view('products.index', compact('products'));
+        return view('products.index', compact('products','countConfirmAmount'));
 
     }
 }

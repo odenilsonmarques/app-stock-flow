@@ -25,4 +25,16 @@ class ProductOutPut extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    // Esse método vai centralizar as responsabilidades de filtrar os itens
+    public function searchProductOutPut(Array $data, $totalPage)
+    {
+        return $this->where(function($query) use($data){
+            if(isset($data['destiny'])){
+                $query->where('destiny', 'LIKE', $data['destiny'] . '%');
+            }
+        })
+        ->paginate($totalPage);
+    }
+
 }
