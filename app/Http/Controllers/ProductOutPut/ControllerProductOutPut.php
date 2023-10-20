@@ -11,10 +11,11 @@ use Exception;
 
 class ControllerProductOutPut extends Controller
 {
+    private $totalPage = 2;
    
     public function index()
     {
-        $productOutPuts = ProductOutPut::all();
+        $productOutPuts = ProductOutPut::paginate($this->totalPage);
         return view('productOutPuts.index', compact('productOutPuts'));
     }
 
@@ -67,4 +68,16 @@ class ControllerProductOutPut extends Controller
     {
         //
     }
+
+    public function search(Request $request, ProductOutPut $productOutPut)
+    {
+        $dataForm = $request->all();
+
+        $productOutPuts  = $productOutPut->searchProductOutPut($dataForm, $this->totalPage);
+
+        return view('productOutPuts.index', compact('productOutPuts'));
+
+
+    }
+
 }

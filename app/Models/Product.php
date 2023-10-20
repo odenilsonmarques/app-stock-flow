@@ -28,4 +28,17 @@ class Product extends Model
     {
         return $this->hasMany(productOutPut::class);
     }
+
+     // Esse método vai centralizar as responsabilidades de filtrar os itens
+     public function searchProduct(Array $data, $totalPage)
+     {
+         return $this->where(function($query) use ($data){
+             if(isset($data['name'])){
+                 // $query->where('name', $data['name']);
+                 $query->where('name', 'LIKE', $data['name'] . '%');
+             }
+         })
+ 
+         ->paginate($totalPage);
+     }
 }

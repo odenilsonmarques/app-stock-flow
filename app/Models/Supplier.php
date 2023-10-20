@@ -31,7 +31,6 @@ class Supplier extends Model
                 $query->where('cnpj', 'LIKE', $data['cnpj'] . '%');
             }
         })
-
         ->paginate($totalPage);
     }
 }

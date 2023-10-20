@@ -15,10 +15,13 @@ Route::any('/suppliers/search',[ControllerSupplier::class,'search'])->name('supl
 Route::get('/products',[ControllerProduct::class,'create'])->name('product.create');
 Route::post('/products',[ControllerProduct::class,'store'])->name('product.store');
 Route::get('/products/index',[ControllerProduct::class,'index'])->name('product.index');
+Route::any('/products/search',[ControllerProduct::class,'search'])->name('product.search');
+
 
 Route::get('/productsoutputs',[ControllerProductOutPut::class,'create'])->name('productsoutputs.create');
 Route::post('/productsoutputs',[ControllerProductOutPut::class,'store'])->name('productsoutputs.store');
 Route::get('/productsoutputs/index',[ControllerProductOutPut::class, 'index'])->name('productsoutputs.index');
+Route::any('/productsoutputs/search',[ControllerProductOutPut::class,'search'])->name('productsoutputs.search');
 
 
 
