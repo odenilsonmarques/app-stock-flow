@@ -103,6 +103,7 @@ button.inputSearch{
     border:1px solid #fff;
     background-color: #94AF9F;
     color:#fff;
+    margin-left: 5px;
 }
 
 
@@ -130,4 +131,8 @@ button.inputSearch{
     text-decoration: none;
     color: #fff;
    
+}
+
+.modal-header h5{
+    text-align: center;
 }

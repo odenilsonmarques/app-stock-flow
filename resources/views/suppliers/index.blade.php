@@ -19,10 +19,13 @@
                     <form action="{{route('supllier.search')}}" method="POST" class="form-horizontal">
                         @csrf
                         <div class="input-group">
+                            <input type="text" name="name" id="name" class="form-control inputSearch sm mx-1"
+                                placeholder="Digite o fornecedor">
+
                             <input type="text" name="cnpj" id="cnpj" class="form-control inputSearch sm"
                                 placeholder="Digite o cnpj">
 
-                            <div class="input-group-append ml-3">
+                            <div class="input-group-append">
                                 <button type="submit" class="btn btn-outline-secondary inputSearch">Buscar</button>
                             </div>
                         </div>
