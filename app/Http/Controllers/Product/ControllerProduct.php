@@ -17,9 +17,12 @@ class ControllerProduct extends Controller
     public function index()
     {
         $countConfirmAmount = Product::where('confirm_amount', 0)->count(); //display products with quantity equal zero in collunm confirm_amount   
+       
+        $productsEmptys = Product::where('confirm_amount', 0)->get();//capturando apenas os produtos esgotados
+
         $products = Product::paginate($this->totalPage);
 
-        return view('products.index', compact('products','countConfirmAmount'));
+        return view('products.index', compact('products','countConfirmAmount','productsEmptys'));
     }
 
     public function create()
@@ -46,7 +49,7 @@ class ControllerProduct extends Controller
      */
     public function show(string $id)
     {
-        //
+       
     }
 
     /**
@@ -71,11 +74,14 @@ class ControllerProduct extends Controller
         //display products with quantity equal zero in collunm confirm_amount. 
         //passando essa variavel aqui também, pois quando é feito uma busca caso esa variável não seja declarada aqui é gerado um erro
         $countConfirmAmount = Product::where('confirm_amount', 0)->count();
+
+        //passando a variavel por causa do modal, pois quando é feito uma busca caso esa variável não seja declarada aqui é gerado um erro
+        $productsEmptys = Product::where('confirm_amount', 0)->get();
         $dataForm = $request->all();
 
         $products = $product->searchProduct($dataForm, $this->totalPage);
 
-        return view('products.index', compact('products','countConfirmAmount'));
+        return view('products.index', compact('products','countConfirmAmount','productsEmptys'));
 
     }
 }

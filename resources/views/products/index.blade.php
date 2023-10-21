@@ -32,32 +32,11 @@
             </div>
 
             <div class="col-lg-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                @php
-                    // $countConfirmAmount;
-                    // $countConfirmAmounttAndMinimumAmount = 0;
-                @endphp
-
-                {{-- @foreach ($products as $product)
-                    @if ($product->confirm_amount == 0)
-                        @php
-                            $countConfirmAmount++;
-                        @endphp
-                    @endif
-
-                    @if ($product->confirm_amount == $product->minimum_amount)
-                        @php
-                            $countConfirmAmounttAndMinimumAmount++;
-                        @endphp
-                    @endif
-                @endforeach --}}
 
                 <p class="warning-product mt-2">
-                    <a href="#">Produtos esgotados {{ $countConfirmAmount }}</a>
+                    <a href="{{ route('product.index') }}" data-bs-toggle="modal"
+                        data-bs-target="#emptyProductsModal">Produtos esgotados {{ $countConfirmAmount }}</a>
                 </p>
-
-                {{-- <p class="warning-product mt-2">
-                    <a href="#">Produtos com quantidade minima {{ $countConfirmAmounttAndMinimumAmount }}</a>
-                </p> --}}
 
                 <button type="button" class="button-new-register btn-sm"><a href="{{ route('product.create') }}">Novo
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -127,6 +106,42 @@
                     {{ $products->links() }}
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="modal fade" id="emptyProductsModal" tabindex="-1" aria-labelledby="emptyProductsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="emptyProductsModalLabel">Produtos Esgotados</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table table-hover">
+                                <thead class="table header-table">
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Fornecedor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($productsEmptys as $productsEmpty)
+                                        <tr>
+                                            <td>{{ $productsEmpty->name }}</td>
+                                            <td>{{ $productsEmpty->supplier->name }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection
