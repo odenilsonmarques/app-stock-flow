@@ -23,7 +23,7 @@
                             <input type="text" name="name" id="name" class="form-control inputSearch sm"
                                 placeholder="Digite o nome do produto">
 
-                            <div class="input-group-append ml-3">
+                            <div class="input-group-append">
                                 <button type="submit" class="btn btn-outline-secondary inputSearch">Buscar</button>
                             </div>
                         </div>

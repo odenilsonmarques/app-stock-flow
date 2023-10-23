@@ -33,6 +33,13 @@ class ProductOutPut extends Model
             if(isset($data['destiny'])){
                 $query->where('destiny', 'LIKE', $data['destiny'] . '%');
             }
+
+            // depois tentar ver outra forma de fazer essa busca
+            if (isset($data['name'])) {
+                $query->whereHas('product', function ($subQuery) use ($data) {
+                    $subQuery->where('name', 'LIKE', $data['name'] . '%');
+                });
+            }
         })
         ->paginate($totalPage);
     }

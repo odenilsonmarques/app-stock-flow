@@ -77,7 +77,6 @@ class ControllerProductOutPut extends Controller
 
         return view('productOutPuts.index', compact('productOutPuts'));
 
-
     }
 
 }

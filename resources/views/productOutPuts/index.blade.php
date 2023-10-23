@@ -20,8 +20,10 @@
                     <form action="{{route('productsoutputs.search')}}" method="POST" class="form-horizontal">
                         @csrf
                         <div class="input-group">
-                            <input type="text" name="destiny" id="destiny" class="form-control inputSearch sm" placeholder="Digite o nome do destino">
+                            <input type="text" name="name" id="name" class="form-control inputSearch sm mx-1" placeholder="Digite o nome do produto">
 
+                            <input type="text" name="destiny" id="destiny" class="form-control inputSearch sm " placeholder="Digite o destino">
+                            
                             <div class="input-group-append ml-3">
                                 <button type="submit" class="btn btn-outline-secondary inputSearch">Buscar</button>
                             </div>
