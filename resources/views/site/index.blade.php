@@ -11,7 +11,7 @@
                     <img src="{{ 'assets/img/estoque4.svg' }}" alt="" width="250" height="250px">
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="{{ 'assets/img/loja_virtual.webp' }}" alt="" class="">
+                    <img src="{{ 'assets/img/loja_virtual.webp' }}" alt="" class="" width="350" height="">
                 </div>
             </div>
         </div>
