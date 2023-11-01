@@ -136,3 +136,37 @@ button.inputSearch{
 .modal-header h5{
     text-align: center;
 }
+
+.hero{
+    margin-top: 100px;
+    
+}
+
+.hero-text h1{
+    font-size: 47px;
+    font-weight: bold;
+    color: #94AF9F;
+}
+
+.hero-text p{
+    font-size: 30px;
+    color: #111;
+}
+
+.show-card {
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.show-card:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.texts-features h2{
+    color: #94AF9F;
+    padding-top: 60px;
+}

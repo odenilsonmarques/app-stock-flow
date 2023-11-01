@@ -3,6 +3,7 @@
 use App\Http\Controllers\Supplier\ControllerSupplier;
 use App\Http\Controllers\Product\ControllerProduct;
 use App\Http\Controllers\ProductOutPut\ControllerProductOutPut;
+use App\Http\Controllers\Site\ControllerSite;
 // use App\Http\Controllers\ProductEmpty\ControllerEmpty;
 use Illuminate\Support\Facades\Route;
 
@@ -25,11 +26,11 @@ Route::get('/productsoutputs/index',[ControllerProductOutPut::class, 'index'])->
 Route::any('/productsoutputs/search',[ControllerProductOutPut::class,'search'])->name('productsoutputs.search');
 
 
+Route::get('/', [ControllerSite::class, 'index'])->name('index');
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 

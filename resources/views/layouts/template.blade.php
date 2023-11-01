@@ -12,7 +12,7 @@
     <header class="mb">
         <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#94AF9F">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     Fluxo de estoque
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -21,7 +21,7 @@
                 <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
+                            <a class="nav-link" href="/">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('supplier.index')}}">Fornecedor</a>
