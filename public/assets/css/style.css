@@ -156,10 +156,11 @@ button.inputSearch{
 .show-card {
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+    border: 2px solid #94AF9F;
     margin: 5px;
     transition: box-shadow 0.3s ease-in-out;
+
 }
 
 .show-card:hover {
@@ -170,3 +171,8 @@ button.inputSearch{
     color: #94AF9F;
     padding-top: 60px;
 }
+
+.data-dashboard{
+    padding-top: 100px;
+}
+

@@ -32,6 +32,7 @@ Route::get('/dashboard',[ControllerDashboard::class,'index'])->name('dashboard.i
 
 
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
