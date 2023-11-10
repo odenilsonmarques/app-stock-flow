@@ -53,7 +53,7 @@
     </footer>
 
     {{-- Esse script está vindo antes por causa da renderizacao do grafico --}}
-    {{-- <script src="{{asset('assets/js/chart.umd.js')}}"></script> --}}
+    <script src="{{asset('assets/js/chart.umd.js')}}"></script>
     @yield('script')
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/script-mask-inputs.js')}}"></script>
