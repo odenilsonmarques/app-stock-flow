@@ -21,7 +21,7 @@
                 <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Dashboard</a>
+                            <a class="nav-link" href="{{route('dashboard.index')}}">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('supplier.index')}}">Fornecedor</a>
@@ -53,7 +53,7 @@
     </footer>
 
     {{-- Esse script está vindo antes por causa da renderizacao do grafico --}}
-    {{-- <script src="{{asset('assets/js/chart.umd.js')}}"></script> --}}
+    <script src="{{asset('assets/js/chart.umd.js')}}"></script>
     @yield('script')
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/script-mask-inputs.js')}}"></script>

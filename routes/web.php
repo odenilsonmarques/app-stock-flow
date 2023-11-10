@@ -4,7 +4,7 @@ use App\Http\Controllers\Supplier\ControllerSupplier;
 use App\Http\Controllers\Product\ControllerProduct;
 use App\Http\Controllers\ProductOutPut\ControllerProductOutPut;
 use App\Http\Controllers\Site\ControllerSite;
-// use App\Http\Controllers\ProductEmpty\ControllerEmpty;
+use App\Http\Controllers\Dashboard\ControllerDashboard;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,8 +25,13 @@ Route::post('/productsoutputs',[ControllerProductOutPut::class,'store'])->name('
 Route::get('/productsoutputs/index',[ControllerProductOutPut::class, 'index'])->name('productsoutputs.index');
 Route::any('/productsoutputs/search',[ControllerProductOutPut::class,'search'])->name('productsoutputs.search');
 
-
 Route::get('/', [ControllerSite::class, 'index'])->name('index');
+
+Route::get('/dashboard',[ControllerDashboard::class,'index'])->name('dashboard.index');
+
+
+
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -36,9 +41,9 @@ Route::get('/', [ControllerSite::class, 'index'])->name('index');
 
 //route to authenticate
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
