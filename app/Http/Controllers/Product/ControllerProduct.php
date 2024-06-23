@@ -16,9 +16,9 @@ class ControllerProduct extends Controller
      */
     public function index()
     {
-        $countConfirmAmount = Product::where('confirm_amount', 0)->count(); //display products with quantity equal zero in collunm confirm_amount   
+        $countConfirmAmount = Product::where('confirm_amount', 0)->count(); //informa a quantidade de produtos esgotados
        
-        $productsEmptys = Product::where('confirm_amount', 0)->get();//capturando apenas os produtos esgotados
+        $productsEmptys = Product::where('confirm_amount', 0)->get();//exibe todos os produtos esgotados que  serao exibidos no modal
 
         $products = Product::paginate($this->totalPage);
 
@@ -27,7 +27,7 @@ class ControllerProduct extends Controller
 
     public function create()
     {
-        $suppliers = Supplier::all();
+        $suppliers = Supplier::orderBy('name')->get();
         return view('products.create', compact('suppliers'));
     }
 

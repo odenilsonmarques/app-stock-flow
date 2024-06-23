@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="container data-dashboard mt-5">
             <div class="row text-center justify-content-center">
-                <div class="col-3 show-card ">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 show-card ">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title">Total de Fornecedores</h6>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="col-3 show-card">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 show-card">
                     <div class="card card-black">
                         <div class="card-body">
                             <h6 class="card-title">Produtos Cadastrados</h6>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="col-3 show-card">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 show-card">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title">Produtos Disponiveis</h6>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <div class="col-3 show-card">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 show-card">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title">Produtos com quantidade minima</h6>
@@ -42,7 +42,7 @@
                 </div>
 
 
-                <div class="col-3 show-card">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 show-card">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title">Produtos abaixo da quantidade minima</h6>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="col-3 show-card">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 show-card">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title">Produtos com estoque zerado</h6>
@@ -242,8 +242,13 @@
 
                 <div class="row">
                     {{-- div para rederizar o gráfico --}}
-                    <div class="col-lg-12  mt-5">
+                    {{-- <div class="chart-container  mt-5">
                         <canvas id="myChart" height="80"></canvas>
+                    </div> --}}
+                   
+
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@
                             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
                             <div class="row">
                                 <div class="col-lg-12 mb-3">
-                                    <label for="name" class="form-label">Fornecedor</label>
+                                    <label for="name" class="form-label required">Informe o fornecedor</label>
                                     <select name="supplier_id" class="form-select" required>
                                         <option value="">Selecione</option>
                                         @foreach($suppliers as $supplier)
@@ -33,22 +33,22 @@
 
                             <div class="row">
                                 <div class="col-lg-3 mb-3">
-                                    <label for="name" class="form-label">Produto</label>
-                                    <input type="name"  name="name" id="name" class="form-control only-letters" placeholder="Digite somente letras" value="{{old('name')}}" required>
+                                    <label for="name" class="form-label required">Nome do produto</label>
+                                    <input type="text"  name="name" id="name" class="form-control only-letters" placeholder="Digite somente letras" value="{{old('name')}}" required>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
-                                    <label for="amount" class="form-label">Quantidade</label>
+                                    <label for="amount" class="form-label required">Quantidade</label>
                                     <input type="number"  name="amount"  id="amount" class="form-control"  value="{{old('amount')}}" required>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
-                                    <label for="confirm_amount" class="form-label">Confirme a Quantidade</label>
+                                    <label for="confirm_amount" class="form-label required">Confirme a Quantidade</label>
                                     <input type="number"  name="confirm_amount"  id="confirm_amount" class="form-control" value="{{old('confirm_amount')}}" required>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
-                                    <label for="minimum_amount" class="form-label">Quantidade Mínima</label>
+                                    <label for="minimum_amount" class="form-label required">Quantidade Mínima</label>
                                     <input type="number"  name="minimum_amount"  id="minimum_amount" class="form-control" value="{{old('minimum_amount')}}" required>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="row">
                                 <div class="col-lg-12 mb-3">
                                     <label for="description" class="form-label">Descrição</label>
-                                    <textarea name="description" id="description" cols="" rows="2" class="form-control" required>{{old('description')}}</textarea>
+                                    <textarea name="description" id="description" cols="" rows="2" class="form-control"placeholder="digite aqui ...">{{old('description')}}</textarea>
                                 </div>
                             </div>
 

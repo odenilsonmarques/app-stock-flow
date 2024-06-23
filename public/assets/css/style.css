@@ -176,3 +176,11 @@ button.inputSearch{
     padding-top: 100px;
 }
 
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 100vw;
+}
+

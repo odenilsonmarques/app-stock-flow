@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('supplier_id')->constrained('suppliers')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();;
             $table->integer('amount');
             $table->integer('confirm_amount');
             $table->integer('minimum_amount');
