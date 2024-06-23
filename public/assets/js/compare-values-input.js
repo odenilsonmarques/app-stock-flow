@@ -8,24 +8,25 @@ document.addEventListener("DOMContentLoaded", function() {
     submitButton.addEventListener("click", validateAmount);
 
     function validateAmount(event) {
-        var amountValue = amountInput.value;
-        var confirmAmountValue = confirmAmountInput.value;
-        var minimumAmountValue = minimumAmountInput.value;
+        var amountValue = parseFloat(amountInput.value);
+        var confirmAmountValue = parseFloat(confirmAmountInput.value);
+        var minimumAmountValue = parseFloat(minimumAmountInput.value);
 
         if (amountValue !== confirmAmountValue) {
             event.preventDefault(); 
             // alert("Os valores devem ser iguais!");
             swal({
                 title: "Ops...",
-                text: "Os campos Quantidade e Confirme a Quantidade precisam ter o mesmo valor !", 
+                text: "Os campos quantidade e confirme a quantidade precisam ter o mesmo valor !", 
             });
         }
-        else if( minimumAmountValue > amountValue) {
+
+        if(amountValue < minimumAmountValue) {
             event.preventDefault(); 
             // alert("A quantidade minima não pode ser maior do que a quantidade geral!");
             swal({
                 title: "Ops...",
-                text: "A quantidade minima não pode ser maior do que a qauntidade geral !", 
+                text: "A quantidade minima não pode ser maior do que a quantidade geral !", 
             });
         }
     }

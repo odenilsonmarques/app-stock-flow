@@ -17,7 +17,9 @@ class ControllerSupplier extends Controller
     public function index()
     {
         $suppliers = Supplier::paginate($this->totalPage);
+        // dd($suppliers);
         return view('suppliers.index', compact('suppliers'));
+      
     }
 
     public function create()

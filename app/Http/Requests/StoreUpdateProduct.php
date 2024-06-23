@@ -23,11 +23,10 @@ class StoreUpdateProduct extends FormRequest
     {
         return [
             'supplier_id'=>['required'],
-            'name'=>['required','string','min:3','max:255','alpha'],
+            'name'=>['required','string','min:3','max:255','alpha'], //o parametro alpha indica que o valor da string deve conter apenas letras
             'amount'=>['required','integer','min:1','regex:/^\d+$/'],
             'confirm_amount'=>['required','integer','min:1','regex:/^\d+$/'],
-            'minimum_amount'=>['required','integer','min:1','regex:/^\d+$/'],
-            'description' => ['required'],
+            'minimum_amount'=>['required','integer','min:1','regex:/^\d+$/']
         ];
     }
 
@@ -56,7 +55,6 @@ class StoreUpdateProduct extends FormRequest
             'minimum_amount.regex' => 'O campo quantidade minima só aceita números inteiros',
             'minimum_amount'=>'O campo quantidade minima deve ter no mínimo 1 valor',
 
-            'description.required'=>'O campo descrição é obrigatório',
 
         ];
     }
