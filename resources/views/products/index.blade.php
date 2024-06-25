@@ -38,7 +38,7 @@
                         data-bs-target="#emptyProductsModal">Produtos esgotados {{ $countConfirmAmount }}</a>
                 </p>
 
-                <button type="button" class="button-new-register btn-sm"><a href="{{ route('product.create') }}">Novo
+                <button type="button" class="button-new-register btn-sm"><a href="{{ route('product.create') }}">Novo produto
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                             <path
@@ -55,9 +55,8 @@
                         <tr>
                             <th>Produto</th>
                             <th>Fornecedor</th>
-                            <th>Qtd de entrada</th>
+                            <th>Qtd recebida</th>
                             <th>Qtd em estoque</th>
-                            <th>Qtd minima</th>
                             <th>Data</th>
                             <th>
                                 Ações
@@ -77,7 +76,6 @@
                                         {{ $product->confirm_amount }}
                                     @endif
                                 </td>
-                                <td>{{ $product->minimum_amount }}</td>
                                 <td>{{ date('d/m/Y', strtotime($product->created_at)) }}</td>
                                 <td>
                                     <a href="#" title="Editar">

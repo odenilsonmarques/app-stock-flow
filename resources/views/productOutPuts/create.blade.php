@@ -21,7 +21,7 @@
                             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
                             <div class="row">
                                 <div class="col-lg-12 mb-3">
-                                    <label for="name" class="form-label">Produto</label>
+                                    <label for="name" class="form-label required">Produto</label>
                                     <select name="product_id" class="form-select" required>
                                         <option value="">Selecione</option>
                                         @foreach($products as $product)
@@ -32,8 +32,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 mb-3">
-                                    <label for="name" class="form-label">Tipo de saída</label>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="name" class="form-label required">Tipo de saída</label>
                                     <select name="typeOutPut" class="form-select" required>
                                         <option value="">Selecione</option>
                                         @foreach($typeOutPuts as $typeOutPut)
@@ -42,30 +42,25 @@
                                     </select>
                                 </div>
 
-                                <div class="col-lg-3 mb-3">
-                                    <label for="amount_outPut" class="form-label">Quantidade</label>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="amount_outPut" class="form-label required">Quantidade</label>
                                     <input type="number"  name="amount_outPut"  id="amount_outPut" value="{{old('amount_outPut')}}" class="form-control" required>
                                 </div>
 
-                                <div class="col-lg-3 mb-3">
-                                    <label for="date_outPut" class="form-label">Data</label>
-                                    <input type="date"  name="date_outPut"  id="date_outPut" value="{{old('date_outPut')}}" class="form-control" required>
-                                </div>
-
-                                <div class="col-lg-3 mb-3">
-                                    <label for="destiny" class="form-label">Orgão / Secretaria</label>
+                                <div class="col-lg-4 mb-3">
+                                    <label for="destiny" class="form-label required">Orgão / secretaria de destino</label>
                                     <input type="text"  name="destiny"  id="destiny" value="{{old('destiny')}}" class="form-control only-letters" placeholder="Digite somente letras" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-lg-6 mb-3">
-                                    <label for="responsible_for_leaving" class="form-label">Responsável Pela Entrega</label>
+                                    <label for="responsible_for_leaving" class="form-label required">Responsável pela entrega</label>
                                     <input type="text" name="responsible_for_leaving" id="responsible_for_leaving" value="{{old('responsible_for_leaving')}}" class="form-control only-letters" placeholder="Digite somente letras" required>
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
-                                    <label for="responsible_for_receiving" class="form-label">Responsável Por Receber</label>
+                                    <label for="responsible_for_receiving" class="form-label required">Responsável por receber</label>
                                     <input type="text" name="responsible_for_receiving" id="responsible_for_receiving" value="{{old('responsible_for_receiving')}}" class="form-control only-letters" placeholder="Digite somente letras" required>
                                 </div>
                             </div>
