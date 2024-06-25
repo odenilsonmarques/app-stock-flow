@@ -23,7 +23,7 @@ class StoreUpdateProduct extends FormRequest
     {
         return [
             'supplier_id'=>['required'],
-            'name'=>['required','string','min:3','max:255','alpha'], //o parametro alpha indica que o valor da string deve conter apenas letras
+            'name'=>['required','string','min:3','max:255','regex:/^[\pL\s]+$/u'], //o parametro a expresssao (regex) no lugar da (alpha), pois o rege aceita somente letrar e espaços, a alpha nao aceita espaçoa
             'amount'=>['required','integer','min:1','regex:/^\d+$/'],
             'confirm_amount'=>['required','integer','min:1','regex:/^\d+$/'],
             'minimum_amount'=>['required','integer','min:1','regex:/^\d+$/']
@@ -39,6 +39,7 @@ class StoreUpdateProduct extends FormRequest
             'name.min'=>'O campo produto deve ter no mínimo 3 caractres',
             'name.max'=>'O campo produto deve ter no maximo 255 caractres',
             'name.alpha' => 'O campo produto deve conter apenas letras',
+            'name.regex' => 'O campo produto deve conter apenas letras.',
 
             'amount.required' => 'O campo quantidade é obrigatório',
             'amount.integer' => 'O campo quantidade deve ser um número inteiro',

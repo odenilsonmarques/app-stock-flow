@@ -14,7 +14,6 @@ class ProductOutPut extends Model
         'id',
         'product_id',
         'amount_outPut',
-        'date_outPut',
         'typeOutPut',
         'destiny',
         'responsible_for_leaving',
