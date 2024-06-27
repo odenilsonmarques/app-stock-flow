@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Report;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductOutPut;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use PDF;
@@ -36,6 +37,20 @@ class ReportController extends Controller
 
         $pdf = PDF::loadView('reports.reportProduct', $datas);
         return $pdf->stream('lista de produtos.pdf');
+    }
+
+
+    public function generateReportProductOutPut(Request $request)
+    {
+        $dataProductsOutPut = ProductOutPut::all();
+        $datas = [
+            'title' => 'Lista de saida de produtos',
+            'date' => date('m/d/Y'),
+            'productsOutPuts' => $dataProductsOutPut
+        ];
+
+        $pdf = PDF::loadView('reports.reportProductsOutPut', $datas);
+        return $pdf->stream('saida de produtos.pdf');
     }
 
 

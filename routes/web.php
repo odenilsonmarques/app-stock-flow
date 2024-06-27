@@ -33,6 +33,7 @@ Route::get('/dashboard',[ControllerDashboard::class,'index'])->name('dashboard.i
 
 Route::get('/report/suppliers', [ReportController::class,'generateReport'])->name('generateReport.report');
 Route::get('/report/products', [ReportController::class,'generateReportProduct'])->name('generateReportProduct.report');
+Route::get('/report/productsOutPut', [ReportController::class,'generateReportProductOutPut'])->name('generateReportProductOutPut.report');
 
 
 
