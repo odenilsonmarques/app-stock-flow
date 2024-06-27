@@ -5,6 +5,7 @@ use App\Http\Controllers\Product\ControllerProduct;
 use App\Http\Controllers\ProductOutPut\ControllerProductOutPut;
 use App\Http\Controllers\Site\ControllerSite;
 use App\Http\Controllers\Dashboard\ControllerDashboard;
+use App\Http\Controllers\Report\ReportController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,6 +29,9 @@ Route::any('/productsoutputs/search',[ControllerProductOutPut::class,'search'])-
 Route::get('/', [ControllerSite::class, 'index'])->name('index');
 
 Route::get('/dashboard',[ControllerDashboard::class,'index'])->name('dashboard.index');
+
+
+Route::get('/report/suppliers', [ReportController::class,'generateReport'])->name('generateReport.report');
 
 
 
