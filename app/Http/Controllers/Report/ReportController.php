@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Report;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use PDF;
 
 class ReportController extends Controller
 {
-
     // generate report in pdf
     public function generateReport(Request $request)
     {
@@ -21,9 +21,21 @@ class ReportController extends Controller
             'suppliers' => $dataSuppliers
         ];
 
-        $pdf = PDF::loadView('reports.reportPDF', $data);
-
+        $pdf = PDF::loadView('reports.reportSupplier', $data);
         return $pdf->stream('lista de fornecedores.pdf');
+    }
+
+    public function generateReportProduct(Request $request)
+    {
+        $dataProducts = Product::all();
+        $datas = [
+            'title' => 'Lista de produtos',
+            'date' => date('m/d/Y'),
+            'products' => $dataProducts
+        ];
+
+        $pdf = PDF::loadView('reports.reportProduct', $datas);
+        return $pdf->stream('lista de produtos.pdf');
     }
 
 
