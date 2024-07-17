@@ -13,7 +13,7 @@
                 @endif
             </div>
         </div>
-
+   
         <div class="row search-and-button">
             <div class="col-lg-6 col align-self-start">
                 <div class="input-group">
@@ -22,7 +22,6 @@
                         <div class="input-group">
                             <input type="text" name="name" id="name" class="form-control inputSearch sm"
                                 placeholder="Digite o nome do produto">
-
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-outline-secondary inputSearch">Buscar</button>
                             </div>
@@ -33,10 +32,10 @@
 
             <div class="col-lg-6 d-grid gap-2 d-md-flex justify-content-md-end">
 
-                <p class="warning-product mt-2 mx-2">
+                {{-- <p class="warning-product mt-2 mx-2">
                     <a href="{{ route('product.index') }}" data-bs-toggle="modal"
                         data-bs-target="#emptyProductsModal">Produtos esgotados {{ $countConfirmAmount }}</a>
-                </p>
+                </p> --}}
 
 
                 <button type="button" class="button-new-register btn-sm"><a href="{{ route('generateReportProduct.report') }}" target="_blank">Gerar
@@ -62,11 +61,13 @@
         </div>
 
         <div class="row">
-            <div class="table-responsive mt-2">
-                <table class="table table table-hover">
+            <div class="table-responsive">
+                <table class="table table table-hover table caption-top">
+                    <caption class="caption-table">Produtos</caption>
                     <thead class="table header-table">
                         <tr>
-                            <th>Produto</th>
+                            <th>código</th>
+                            <th>Nome</th>
                             <th>Fornecedor</th>
                             <th>Qtd recebida</th>
                             <th>Qtd em estoque</th>
@@ -79,6 +80,7 @@
                     <tbody>
                         @foreach ($products as $product)
                             <tr @if ($product->confirm_amount == 0) class="red-row" @endif>
+                                <td>{{ $product->product_number }}</td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->supplier->name }}</td>
                                 <td>{{ $product->amount }}</td>

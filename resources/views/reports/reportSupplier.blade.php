@@ -18,14 +18,16 @@
 </head>
 <body>
     <h1>{{ $title }}</h1>
-    <p>Data: {{ $date }}</p>
+    <p>Data: {{ date('d/m/Y') }}</p>
     <table>
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Cnpj</th>
+                <th>Nome</th>
+                <th>Pessoa</th>
+                <th>Nº documento</th>
                 <th>Phone</th>
+                <th>Cadastrado em</th>
             </tr>
         </thead>
         <tbody>
@@ -33,8 +35,10 @@
                 <tr>
                     <td>{{ $supplier->id }}</td>
                     <td>{{ $supplier->name }}</td>
-                    <td>{{ $supplier->cnpj }}</td>
+                    <td>{{ $supplier->type_supplier }}</td>
+                    <td>{{ $supplier->cpf_cnpj }}</td>
                     <td>{{ $supplier->phone }}</td>
+                    <td>{{ \Carbon\Carbon::parse($supplier->created_at)->format('d/m/Y H:i') }}</td>
                 </tr>
             @endforeach
         </tbody>

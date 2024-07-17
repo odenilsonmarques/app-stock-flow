@@ -23,7 +23,7 @@
                                 <div class="col-lg-12 mb-3">
                                     <label for="name" class="form-label required">Informe o fornecedor</label>
                                     <select name="supplier_id" class="form-select" required>
-                                        <option value="">Selecione</option>
+                                        <option>Selecione</option>
                                         @foreach($suppliers as $supplier)
                                             <option value="{{$supplier['id']}}" {{ old('supplier_id') == $supplier['id'] ? 'selected' : '' }}>{{$supplier['name']}}</option>
                                         @endforeach
@@ -32,9 +32,19 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 mb-3">
+                                <div class="col-lg-12 mb-3">
                                     <label for="name" class="form-label required">Nome do produto</label>
                                     <input type="text"  name="name" id="name" class="form-control only-letters" placeholder="Digite somente letras" value="{{old('name')}}" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 mb-3">
+                                    <label for="product_number" class="form-label required">Código do produto</label>
+                                    <div class="input-group">
+                                        <input type="text" name="product_number" id="product_number" class="form-control" value="{{old('product_number')}}" readonly required>
+                                        <button type="button" class="btn btn-secondary" onclick="generateProductNumber()">Gerar</button>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
@@ -43,7 +53,7 @@
                                 </div>
 
                                 <div class="col-lg-3 mb-3">
-                                    <label for="confirm_amount" class="form-label required">Confirme a Quantidade</label>
+                                    <label for="confirm_amount" class="form-label required">Confirme a quantidade</label>
                                     <input type="number"  name="confirm_amount"  id="confirm_amount" class="form-control" value="{{old('confirm_amount')}}" required>
                                 </div>
 

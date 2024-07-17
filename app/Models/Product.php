@@ -12,12 +12,25 @@ class Product extends Model
     protected $fillable = [
         'id',
         'supplier_id',
+        'uuid',
+        'product_number',
         'name',
         'description',
         'amount',
         'confirm_amount',
         'minimum_amount',
     ];
+
+
+    // protected static function boot()
+    // {
+    //     parent::boot();
+
+    //     static::creating(function($product){
+    //         $product->uuid = ()
+    //     })
+    // }
+
 
     public function supplier()
     {

@@ -22,19 +22,18 @@
     <table>
         <thead>
             <tr>
-                <th>#</th>
-                <th>Produto</th>
+                <th>código</th>
+                <th>Nome</th>
                 <th>Fornecedor</th>
                 <th>Qtd recebida</th>
                 <th>Qtd em estoque</th>
-                <th>Cadastrado em</th>
-                
+                <th>Data do cadastro</th>
             </tr>
         </thead>
         <tbody>
             @foreach($products as $product)
                 <tr>
-                    <td>{{ $product->id }}</td>
+                    <td>{{ $product->product_number  }}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->supplier->name }}</td>
                     <td>{{ $product->amount }}</td>

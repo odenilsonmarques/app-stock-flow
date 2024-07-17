@@ -11,9 +11,16 @@ class Supplier extends Model
 
     protected $fillable = [
         'name',
-        'cnpj',
+        'type_supplier',
+        'cpf_cnpj',
+        'email',
         'phone',
-        'date',
+        'cep',
+        'road',
+        'identification_number',
+        'complement',
+        'city',
+        'district',
         'invoice',
     ];
 
@@ -23,19 +30,19 @@ class Supplier extends Model
     }
 
     // Esse método vai centralizar as responsabilidades de filtrar os itens
-    public function search(Array $data, $totalPage)
+    public function search(array $data, $totalPage)
     {
-        return $this->where(function($query) use ($data){
-            if(isset($data['name'])){
+        return $this->where(function ($query) use ($data) {
+            if (isset($data['name'])) {
                 // $query->where('cnpj', $data['cnpj']);
                 $query->where('name', 'LIKE', $data['name'] . '%');
             }
 
-            if(isset($data['cnpj'])){
+            if (isset($data['cpf_cnpj'])) {
                 // $query->where('cnpj', $data['cnpj']);
-                $query->where('cnpj', 'LIKE', $data['cnpj'] . '%');
+                $query->where('cpf_cnpj', 'LIKE', $data['cpf_cnpj'] . '%');
             }
         })
-        ->paginate($totalPage);
+            ->paginate($totalPage);
     }
 }

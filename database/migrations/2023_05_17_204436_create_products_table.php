@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('supplier_id')->constrained('suppliers')->onDelete('cascade')->onUpdate('cascade');
+            $table->uuid('uuid')->unique();
             $table->string('name');
+            $table->string('product_number');
             $table->string('description')->nullable();;
             $table->integer('amount');
             $table->integer('confirm_amount');

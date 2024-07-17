@@ -102,8 +102,8 @@
                                     <thead class="table header-table">
                                         <tr>
                                             <th>Produto</th>
-                                            <th>Quantidade cadastrada</th>
-                                            <th>Quantidade em estoque</th>
+                                            <th>Qtd cadastrada</th>
+                                            <th>Qtd em estoque</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -133,7 +133,7 @@
                                     <thead class="table header-table  ">
                                         <tr>
                                             <th>Produto</th>
-                                            <th>Quantidade em estoque</th>
+                                            <th>Qtd em estoque</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -162,7 +162,8 @@
                                     <thead class="table header-table  ">
                                         <tr>
                                             <th>Produto</th>
-                                            <th>Quantidade</th>
+                                            <th>Qtd em estoque</th>
+                                            <th>Qtd minima</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -170,6 +171,8 @@
                                             <tr>
                                                 <td>{{ $quantityProductsMinimum->name }}</td>
                                                 <td>{{ $quantityProductsMinimum->confirm_amount }}</td>
+                                                <td>{{ $quantityProductsMinimum->minimum_amount }}</td>
+                                                
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -191,7 +194,8 @@
                                     <thead class="table header-table  ">
                                         <tr>
                                             <th>Produto</th>
-                                            <th>Quantidade</th>
+                                            <th>Qtd em estoque</th>
+                                            <th>Qtd minima</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -199,6 +203,7 @@
                                             <tr>
                                                 <td>{{ $productsQuantityBelowMinimum->name }}</td>
                                                 <td>{{ $productsQuantityBelowMinimum->confirm_amount }}</td>
+                                                <td>{{ $productsQuantityBelowMinimum->minimum_amount }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -220,14 +225,12 @@
                                     <thead class="table header-table  ">
                                         <tr>
                                             <th>Produto</th>
-                                            <th>Quantidade</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($productsQuantityWithZeroStocks as $productsQuantityWithZeroStock)
                                             <tr>
                                                 <td>{{ $productsQuantityWithZeroStock->name }}</td>
-                                                <td>{{ $productsQuantityWithZeroStock->confirm_amount }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -239,53 +242,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    {{-- div para rederizar o gráfico --}}
-                    {{-- <div class="chart-container  mt-5">
-                        <canvas id="myChart" height="80"></canvas>
-                    </div> --}}
-                   
-
-                    <div class="chart-container">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 @endsection
 
-@section('script')
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: <?php echo $months; ?>,
-        datasets: [
-            {
-                label: 'Entrada de Produtos Mensal',
-                data: <?php echo $quantities; ?>,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }
-        ]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-
-</script>
     
     
 
-@endsection
+

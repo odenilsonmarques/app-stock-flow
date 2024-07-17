@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Supplier; 
 use App\Http\Requests\StoreUpdateProduct;
+use Illuminate\Support\Str;
 
 class ControllerProduct extends Controller
 {
@@ -37,11 +38,16 @@ class ControllerProduct extends Controller
     public function store(StoreUpdateProduct $request)
     {
         $request->merge(['supplier_id']); 
+
+        $request->merge([
+            'uuid' => (string) Str::uuid(),
+            'supplier_id' // Supondo que o supplier_id já esteja no request
+        ]);
+
         // dd($teste);
         Product::create($request->all());
         return redirect()->route('product.index')
         ->with('messageCreate', 'Produto cadastrado com sucesso !');
-
     }
 
     /**

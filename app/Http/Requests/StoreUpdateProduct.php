@@ -23,7 +23,8 @@ class StoreUpdateProduct extends FormRequest
     {
         return [
             'supplier_id'=>['required'],
-            'name'=>['required','string','min:3','max:255','regex:/^[\pL\s]+$/u'], //o parametro a expresssao (regex) no lugar da (alpha), pois o rege aceita somente letrar e espaços, a alpha nao aceita espaçoa
+            'name'=>['required','string','min:3','max:255','regex:/^[\pL\s]+$/u'], //o parametro a expresssao (regex) no lugar da (alpha), pois o regex aceita somente letrar e espaços, a alpha nao aceita espaços
+            'product_number'=>['required','string','unique:products'],
             'amount'=>['required','integer','min:1','regex:/^\d+$/'],
             'confirm_amount'=>['required','integer','min:1','regex:/^\d+$/'],
             'minimum_amount'=>['required','integer','min:1','regex:/^\d+$/']
@@ -55,6 +56,9 @@ class StoreUpdateProduct extends FormRequest
             'minimum_amount.integer' => 'O campo quantidade minima deve ser um número inteiro',
             'minimum_amount.regex' => 'O campo quantidade minima só aceita números inteiros',
             'minimum_amount'=>'O campo quantidade minima deve ter no mínimo 1 valor',
+
+            'product_number.required'=>'O campo código do produto é obrigatório',
+            'product_number.unique'=>'O código do produto informado já está cadastrado',
 
 
         ];
