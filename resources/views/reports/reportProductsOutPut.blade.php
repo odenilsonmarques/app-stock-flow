@@ -44,9 +44,8 @@
         <tbody>
             @foreach ($productsOutPuts as $productsOutPut)
                 <tr>
-                    {{-- <td>{{ $productsOutPut->id }}</td> --}}
                     <td>{{ $productsOutPut->product->name }}</td>
-                    <td>{{ $productsOutPut->product->amount}}</td>
+                    <td>{{ $productsOutPut->product->amount }}</td>
                     <td>
                         @if ($productsOutPut->product->confirm_amount == 0)
                             Esgotado
@@ -60,8 +59,6 @@
                     <td>{{ $productsOutPut->destiny }}</td>
                     <td>{{ $productsOutPut->responsible_for_leaving }}</td>
                     <td>{{ $productsOutPut->responsible_for_receiving }}</td>
-                    {{-- <td>{{ $dataProducts->cnpj }}</td>
-                    <td>{{ $dataProducts->phone }}</td> --}}
                 </tr>
             @endforeach
         </tbody>

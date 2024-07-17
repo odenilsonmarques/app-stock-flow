@@ -9,7 +9,7 @@ use App\Http\Requests\StoreUpdateSupplier;
 
 class ControllerSupplier extends Controller
 {
-    private $totalPage = 3;
+    private $totalPage = 5;
 
     /**
      * Display a listing of the resource.
@@ -19,7 +19,6 @@ class ControllerSupplier extends Controller
         $suppliers = Supplier::paginate($this->totalPage);
         // dd($suppliers);
         return view('suppliers.index', compact('suppliers'));
-      
     }
 
     public function create()
@@ -34,24 +33,27 @@ class ControllerSupplier extends Controller
 
         $data = $request->except('invoice');
 
-        if($request->invoice)
-        {
-            
+        if ($request->invoice) {
+
             $data['invoice'] = $request->invoice->store('notas');
         }
 
         Supplier::create($data);
 
         return redirect()->route('supplier.index')
-        ->with('messageCreate', 'Fornecedor cadastrado com sucesso !');
+            ->with('messageCreate', 'Fornecedor cadastrado com sucesso !');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        if (!$suppliers = Supplier::find($id))
+            return redirect()->route('supplier.show');
+
+        return view('suppliers.show', compact('suppliers'));
+
     }
 
     /**

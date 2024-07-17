@@ -13,6 +13,7 @@ Route::get('/suppliers',[ControllerSupplier::class,'create'])->name('supplier.cr
 Route::post('/suppliers',[ControllerSupplier::class,'store'])->name('supplier.store');
 Route::get('/suppliers/index',[ControllerSupplier::class,'index'])->name('supplier.index');
 Route::any('/suppliers/search',[ControllerSupplier::class,'search'])->name('supllier.search');
+Route::get('/suppliers/{id}/detail', [ControllerSupplier::class,'show'])->name('supplier.show');
 
 
 Route::get('/products',[ControllerProduct::class,'create'])->name('product.create');
@@ -25,6 +26,7 @@ Route::get('/productsoutputs',[ControllerProductOutPut::class,'create'])->name('
 Route::post('/productsoutputs',[ControllerProductOutPut::class,'store'])->name('productsoutputs.store');
 Route::get('/productsoutputs/index',[ControllerProductOutPut::class, 'index'])->name('productsoutputs.index');
 Route::any('/productsoutputs/search',[ControllerProductOutPut::class,'search'])->name('productsoutputs.search');
+
 
 Route::get('/', [ControllerSite::class, 'index'])->name('index');
 
