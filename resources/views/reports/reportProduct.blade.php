@@ -18,7 +18,7 @@
 </head>
 <body>
     <h1>{{ $title }}</h1>
-    <p>Data: {{ $date }}</p>
+    <p>Data: {{ date('d/m/Y') }}</p>
     <table>
         <thead>
             <tr>

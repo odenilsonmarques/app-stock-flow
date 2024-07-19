@@ -17,13 +17,13 @@
                 <div class="card mt-5">
                     <div class="card-header">Cadastro de Produto</div>
                     <div class="card-body">
-                        <form action="{{ route('product.store')}}" method="post">
+                        <form action="{{ route('product.store')}}" method="post" id="productForm">
                             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
                             <div class="row">
                                 <div class="col-lg-12 mb-3">
                                     <label for="name" class="form-label required">Informe o fornecedor</label>
                                     <select name="supplier_id" class="form-select" required>
-                                        <option>Selecione</option>
+                                        <option value="">Selecione</option>
                                         @foreach($suppliers as $supplier)
                                             <option value="{{$supplier['id']}}" {{ old('supplier_id') == $supplier['id'] ? 'selected' : '' }}>{{$supplier['name']}}</option>
                                         @endforeach

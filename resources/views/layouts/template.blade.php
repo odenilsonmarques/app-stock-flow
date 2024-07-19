@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/sweetalert2.min.css')}}">
 </head>
 <body>
     <header class="mb">
@@ -52,15 +53,12 @@
         </div>
     </footer>
 
-    {{-- Esse script está vindo antes por causa da renderizacao do grafico --}}
-    <script src="{{asset('assets/js/chart.umd.js')}}"></script>
-    @yield('script')
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/script-mask-inputs.js')}}"></script>
     
     <script src="{{asset('assets/js/generateProductNumber.js')}}"></script>
     <script src="{{asset('assets/js/scripts-supplier.js')}}"></script>
     <script src="{{asset('assets/js/compare-values-input.js')}}"></script>
-    <script src="{{('assets/js/sweetalert2.js')}}"></script>
+    <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
 </body>
 </html>
