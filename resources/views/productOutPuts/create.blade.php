@@ -15,7 +15,7 @@
                     </div>
                 @endif
                 <div class="card mt-5">
-                    <div class="card-header">Cadastro de Saída de Produto</div>
+                    <div class="card-header">Registro de Saída de Produto</div>
                     <div class="card-body">
                         <form action="{{ route('productsoutputs.store')}}" method="post">
                             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="col-lg-4 mb-3">
-                                    <label for="destiny" class="form-label required">Orgão / secretaria de destino</label>
+                                    <label for="destiny" class="form-label required">Orgão / Secretaria de destino</label>
                                     <input type="text"  name="destiny"  id="destiny" value="{{old('destiny')}}" class="form-control only-letters" placeholder="Digite somente letras" required>
                                 </div>
                             </div>

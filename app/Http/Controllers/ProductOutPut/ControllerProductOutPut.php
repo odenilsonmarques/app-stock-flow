@@ -22,7 +22,8 @@ class ControllerProductOutPut extends Controller
     public function create()
     {
         $typeOutPuts = ["Caixa", "Unidade", "Pacote", "Resma", "Quilograma", "Litro", "Metro", "Pallet", "Galão", "Kit", "Conjunto", "Rolo", "Dúzia", "Engradado", "Cartela"];
-        $products = Product::all();
+        sort($typeOutPuts);
+        $products = Product::orderby('name')->get();
         return view('productOutPuts.create',compact('products','typeOutPuts'));
     }
 

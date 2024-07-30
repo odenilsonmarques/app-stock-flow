@@ -12,6 +12,7 @@ class ProductOutPut extends Model
 
     protected $fillable = [
         'id',
+        'deliverymen_id',
         'product_id',
         'amount_outPut',
         'typeOutPut',
@@ -20,16 +21,24 @@ class ProductOutPut extends Model
         'responsible_for_receiving',
     ];
 
+    
+
     public function product()
     {
         return $this->belongsTo(Product::class);
-    }
+    }  
+    
+    public function deliverymen()
+    {
+        return $this->belongsTo(Deliverymen::class);
+    } 
+    
 
     // Esse método vai centralizar as responsabilidades de filtrar os itens
-    public function searchProductOutPut(Array $data, $totalPage)
+    public function searchProductOutPut(array $data, $totalPage)
     {
-        return $this->where(function($query) use($data){
-            if(isset($data['destiny'])){
+        return $this->where(function ($query) use ($data) {
+            if (isset($data['destiny'])) {
                 $query->where('destiny', 'LIKE', $data['destiny'] . '%');
             }
 
@@ -40,7 +49,6 @@ class ProductOutPut extends Model
                 });
             }
         })
-        ->paginate($totalPage);
+            ->paginate($totalPage);
     }
-
 }

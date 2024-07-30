@@ -39,7 +39,7 @@ class Product extends Model
 
     public function productOutPuts()
     {
-        return $this->hasMany(productOutPut::class);
+        return $this->hasMany(ProductOutPut::class);
     }
 
      // Esse método vai centralizar as responsabilidades de filtrar os itens

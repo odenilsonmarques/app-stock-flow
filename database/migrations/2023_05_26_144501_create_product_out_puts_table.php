@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_out_puts', function (Blueprint $table) {
             $table->id();
+             $table->foreignId('deliverymen_id')->constrained('deliverymens')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('amount_outPut');
             $table->string('typeOutPut');
@@ -31,3 +32,5 @@ return new class extends Migration
         Schema::dropIfExists('product_out_puts');
     }
 };
+
+
