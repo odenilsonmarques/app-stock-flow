@@ -5,6 +5,7 @@ use App\Http\Controllers\Product\ControllerProduct;
 use App\Http\Controllers\ProductOutPut\ControllerProductOutPut;
 use App\Http\Controllers\Site\ControllerSite;
 use App\Http\Controllers\Dashboard\ControllerDashboard;
+use App\Http\Controllers\DeliveryMen\ControllerDeliveryMen;
 use App\Http\Controllers\Report\ReportController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,8 @@ Route::get('/report/products', [ReportController::class,'generateReportProduct']
 Route::get('/report/productsOutPut', [ReportController::class,'generateReportProductOutPut'])->name('generateReportProductOutPut.report');
 
 
+Route::get('/deliverymens', [ControllerDeliveryMen::class,'create'])->name('deliverymens.create');
+Route::post('/deliverymens', [ControllerDeliveryMen::class,'store'])->name('deliverymens.store');
 
 
 

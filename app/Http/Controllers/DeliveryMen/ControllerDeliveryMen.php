@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Delivery;
+namespace App\Http\Controllers\DeliveryMen;
 
 use App\Http\Controllers\Controller;
+use App\Models\Deliverymen;
 use Illuminate\Http\Request;
 
-class ControllerDelivery extends Controller
+class ControllerDeliveryMen extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,22 @@ class ControllerDelivery extends Controller
         //
     }
 
+    public function create()
+    {
+        return view('deliverymens.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        Deliverymen::create($data);
+
+        return redirect()->route('deliverymens.create')
+        ->with('messageCreate', 'Entregador cadastrado com sucesso !');
     }
 
     /**
@@ -28,7 +39,7 @@ class ControllerDelivery extends Controller
      */
     public function show(string $id)
     {
-        //
+       
     }
 
     /**
